@@ -2,7 +2,6 @@ import os
 from SportsData import *
 
 def getLatestGame(team):
-	return ("Red Sox","Cardinals","2013-10-30")
 	s = SportsData(os.environ["api_key"])
 	r = s.getLeagueSchedule(2013)
 	r = r["calendars"]["event"]
@@ -18,4 +17,3 @@ def getLatestGame(team):
 
 		if homeTeam == team or awayTeam == team:
 			return (homeTeam, awayTeam, gameDate)
-	
