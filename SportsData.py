@@ -30,4 +30,6 @@ class SportsData:
 
 	def getPlayerStatistics(self, year):
 		return self._request(self.ROOT_URL+"seasontd/players/", str(year))
+	def getBoxScore(self, eventid):
+		return self._request(self.ROOT_URL+"boxscore/", eventid)
 

@@ -17,17 +17,10 @@ def index():
 	return render_template('index.html')
 
 @app.route("/display-tips", methods=["POST"])
-def tips():
-	if request.method == 'POST':	
-		homeTeam, awayTeam, date = getLatestGame(request.form['team'])
-	else:
-		homeTeam, awayTeam, date = getLatestGame("Red Sox")
-
-	print "GOT IT"
+def tips():		
+	homeTeam, awayTeam, date, boxScore = getLatestGame(request.form['team'])
 	f = FanGraphs(os.environ["kimono_api_key"])
-
 	data = f.getData(date.split("T")[0], homeTeam, 2013)
-	print "GOT IT"
 	data = data["results"]["collection1"]
 
 	sortedData = sorted(data, key=lambda k: math.fabs(float(k['wpa'])))
