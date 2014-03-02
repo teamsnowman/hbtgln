@@ -1,0 +1,32 @@
+<html>
+<head>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="http://daigofuji.github.io/bbclub-font/css/bbclub-font.css"> 
+</head>
+<body>
+	<div class="container">
+		<div id="boxscore">
+			<table>
+				<tr>
+					<td>{% homeTeam %} <i class="bb-bos "></i></td>
+					{% for score in homeTeamScore %}
+						<td>{% score %}</td>
+					{%  endfor %}
+				</tr>
+				<tr>
+					<td>{% awayTeam %}</td>
+					{% for score in awayTeamScore %}
+						<td>{% score %}</td>
+					{%  endfor %}
+				</tr>
+			</table>
+		</div>
+		<ul class="tips">
+			{% for tip in tips %}
+			<li>{% tip %}
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+</body>
+</html>
