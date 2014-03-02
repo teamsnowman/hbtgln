@@ -1,40 +1,43 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 	</head>
 	<body>
 		<div id="title">CHOOSE A TEAM</div>
-		<select>
-			<option value="Astros">Astros</option>
-			<option value="Marlins">Marlins</option>
-			<option value="Pirates">Pirates</option>
-			<option value="Athletics">Athletics</option>
-			<option value="Rays">Rays</option>
-			<option value="Padres">Padres</option>
-			<option value="Indians">Indians</option>
-			<option value="Mariners">Mariners</option>
-			<option value="Brewers">Brewers</option>
-			<option value="Rockies">Rockies</option>
-			<option value="City Royals">City Royals</option>
-			<option value="Twins">Twins</option>
-			<option value="Mets">Mets</option>
-			<option value="Braves">Braves</option>
-			<option value="Diamondbacks">Diamondbacks</option>
-			<option value="Orioles">Orioles</option>
-			<option value="Cubs">Cubs</option>
-			<option value="Reds">Reds</option>
-			<option value="Nationals">Nationals</option>
-			<option value="Blue Jays">Blue Jays</option>
-			<option value="Cardinals">Cardinals</option>
-			<option value="White Sox">White Sox</option>
-			<option value="Rangers">Rangers</option>
-			<option value="Giants">Giants</option>
-			<option value="Red Sox">Red Sox</option>
-			<option value="Tigers">Tigers</option>
-			<option value="Angels">Angels</option>
-			<option value="Phillies">Phillies</option>
-			<option value="Yankees">Yankees</option>
-			<option value="Dodgers">Dodgers</option>
-		</select>
+		<form action="/display-tips" method="POST">
+			<select name="team">
+				<option value="Astros">Astros</option>
+				<option value="Marlins">Marlins</option>
+				<option value="Pirates">Pirates</option>
+				<option value="Athletics">Athletics</option>
+				<option value="Rays">Rays</option>
+				<option value="Padres">Padres</option>
+				<option value="Indians">Indians</option>
+				<option value="Mariners">Mariners</option>
+				<option value="Brewers">Brewers</option>
+				<option value="Rockies">Rockies</option>
+				<option value="City Royals">City Royals</option>
+				<option value="Twins">Twins</option>
+				<option value="Mets">Mets</option>
+				<option value="Braves">Braves</option>
+				<option value="Diamondbacks">Diamondbacks</option>
+				<option value="Orioles">Orioles</option>
+				<option value="Cubs">Cubs</option>
+				<option value="Reds">Reds</option>
+				<option value="Nationals">Nationals</option>
+				<option value="Blue Jays">Blue Jays</option>
+				<option value="Cardinals">Cardinals</option>
+				<option value="White Sox">White Sox</option>
+				<option value="Rangers">Rangers</option>
+				<option value="Giants">Giants</option>
+				<option value="Red Sox">Red Sox</option>
+				<option value="Tigers">Tigers</option>
+				<option value="Angels">Angels</option>
+				<option value="Phillies">Phillies</option>
+				<option value="Yankees">Yankees</option>
+				<option value="Dodgers">Dodgers</option>
+			</select>
+			<input type="submit" value="submit"/>
+		</form>
 	</body>
 </html>
