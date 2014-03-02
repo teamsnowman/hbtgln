@@ -3,6 +3,7 @@
 	margin:0px;
 }
 #first{
+	display:none;
 }
 #second{
 }
@@ -22,24 +23,24 @@
 	color:#000;
         font-family:Helvetica;
 }
-#firstverticalpane{
+#lowerpane{
 	position:fixed;
 	left:0px;
 	height:100%;
-	width:20%;
- 	background:#000;
+	width:100%;
+ 	background:#E74C3C;
 }
-#secondverticalpane{
+#higherpane{
 	position:fixed;
-	left:80%;
+	left:25%;
 	height:100%;
-	width:20%;
- 	background:#000;
-}
-#thirdverticalpane{
-	position:fixed;
-	left:20%;
-	height:100%;
-	width:60%;
+	width:50%;
+ 	background:#fff;
 }
 
+.tip{
+	text-align:center;
+	font-family:Open Sans;
+	font-size:36px;
+	height:10%;
+}
