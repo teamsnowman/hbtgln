@@ -83,7 +83,6 @@ def tips():
 		tips.append(tip)
 		#tips.append(cosa['wpa'] + ":" + cosa['play'].rstrip(".") + " in " + cosa['inning'] +)
 	
->>>>>>> e7a37b7f4b4c1942ad9b463dc63d83a6d7ec83f5
 	return render_template('displaytips.html', 
 		homeTeam = homeTeam,
 		awayTeam = awayTeam,
