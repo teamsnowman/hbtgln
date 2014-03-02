@@ -8,12 +8,12 @@
 .pane {
   height: 20%;
   width: 100%;
-  background: #FF3333; }
+  background-color: #FF3333; }
 
 .middlepane {
   height: 60%;
   width: 100%;
-  background: #fff;
+  background-color: #fff;
   text-align: center; }
 
 #title {
@@ -22,20 +22,17 @@
   font-family: Helvetica; }
 
 #lowerpane {
-  position: fixed;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-  background: #E74C3C; }
+  background-color: #FF793F; }
 
 #higherpane {
-  position: fixed;
-  left: 25%;
   height: 100%;
-  width: 50%;
-  background: #fff; }
+  width: 75%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 10px; }
 
 .tip {
+  list-style: none;
   text-align: center;
   font-family: Open Sans;
   font-size: 36px;
