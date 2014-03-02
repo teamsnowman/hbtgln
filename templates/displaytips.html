@@ -8,13 +8,13 @@
 		<div id="boxscore">
 			<table>
 				<tr>
-					<td> <i class="bb-{{homeAbbrev}}">{{ homeTeam }}</i></td>
+					<td> <i class="bb-{{homeAbbrev}}"></i>{{ homeTeam }}</td>
 					{% for score in homeTeamScore %}
 						<td>{{ score }}</td>
 					{%  endfor %}
 				</tr>
 				<tr>
-					<td> <i class="bb-{{awayAbbrev}}">{{ awayTeam }}</td>
+					<td> <i class="bb-{{awayAbbrev}}"></i>{{ awayTeam }}</td>
 					{% for score in awayTeamScore %}
 						<td>{{ score }}</td>
 					{%  endfor %}
