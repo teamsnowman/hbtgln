@@ -2,38 +2,34 @@
   padding: 0px;
   margin: 0px; }
 
-.pane {
-  height: 20%;
-  width: 100%;
-  background: #FF3333; }
+body {
+  font-family: "Open Sans"; }
 
-.middlepane {
-  height: 60%;
-  width: 100%;
-  background: #fff;
-  text-align: center; }
+.container {
+  font-size: 24px;
+  width: 75%;
+  text-align: center;
+  margin: 0 auto; }
 
-#title {
-  font-size: 150px;
-  color: #000;
-  font-family: Helvetica; }
+.tips {
+  margin: 10px;
+  list-style: none;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 36px;
+  height: 10%; }
 
-#firstverticalpane {
-  position: fixed;
-  left: 0px;
-  height: 100%;
-  width: 20%;
-  background: #000; }
-
-#secondverticalpane {
-  position: fixed;
-  left: 80%;
-  height: 100%;
-  width: 20%;
-  background: #000; }
-
-.middleverticalpane {
-  position: fixed;
-  left: 20%;
-  height: 100%;
-  width: 60%; }
+#boxscore {
+  text-align: center;
+  margin: 10px; }
+  #boxscore table {
+    margin: 10px;
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    border-spacing: 0;
+    border: 1px solid black;
+    font-size: 24px; }
+    #boxscore table td {
+      padding: 10px;
+      border: 1px solid black; }
