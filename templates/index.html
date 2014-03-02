@@ -4,7 +4,7 @@
 	</head>
 	<body>
 		<div id="title">CHOOSE A TEAM</div>
-		<form action="/display-tips" method="POST">
+		<form action="/display-tips" method="POST" id="selectit">
 			<select name="team">
 				<option value="Astros">Astros</option>
 				<option value="Marlins">Marlins</option>
@@ -37,7 +37,19 @@
 				<option value="Yankees">Yankees</option>
 				<option value="Dodgers">Dodgers</option>
 			</select>
-			<input type="submit" value="submit"/>
+			<input type="submit" onClick="show(); hide();" value="submit"/>
 		</form>
+		<script>
+function show()
+{
+	document.getElementById('loading').style.display="block";
+
+}
+function hide(){
+	document.getElementById('selectit').style.display="none"
+	document.getElementById('title').style.display="none"
+}
+</script>
+		<center><img id="loading" style="display:none; text-align:center; float:center; height:40px; width:40px" src="http://glenmartinmusic.com/mustache/wp-content/themes/glenmartin/images/loader.gif"></img></center>
 	</body>
 </html>

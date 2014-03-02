@@ -18,8 +18,11 @@ def index():
 
 @app.route("/display-tips", methods=["POST"])
 def tips():
-		
-	homeTeam, awayTeam, date = getLatestGame(request.form['team'])
+	if request.method == 'POST':	
+		homeTeam, awayTeam, date = getLatestGame(request.form['team'])
+	else:
+		homeTeam, awayTeam, date = getLatestGame("Red Sox")
+
 	print "GOT IT"
 	f = FanGraphs(os.environ["kimono_api_key"])
 
@@ -29,7 +32,7 @@ def tips():
 
 	sortedData = sorted(data, key=lambda k: math.fabs(float(k['wpa'])))
 
-	topPlays = sortedData[-1:]
+	topPlays = sortedData[-5:]
 	tips = []
 	for play in topPlays:
 		tip = ""
@@ -42,16 +45,16 @@ def tips():
 		
 		#remove parenthesis 
 		#(from http://stackoverflow.com/questions/8713118/remove-content-inside-parenthesis-as-well-as-the-parenthesis-themselves-from-a-p)
-		regEx = re.compile(r'([^\(]*)\([^\)]*\) *(.*)')
-		m = regEx.match(formattedPlay)
-		while m:
-			text = m.group(1) + m.group(2)
-			m = regEx.match(formattedPlay)
+		# regEx = re.compile(r'([^\(]*)\([^\)]*\) *(.*)')
+		# m = regEx.match(formattedPlay)
+		# while m:
+		# 	text = m.group(1) + m.group(2)
+		# 	m = regEx.match(formattedPlay)
 
-		tip += play['play'].rstrip(".")
+		tip += ": "+play['play'].rstrip(".")
 		tips.append(tip)
 		#tips.append(cosa['wpa'] + ":" + cosa['play'].rstrip(".") + " in " + cosa['inning'] +)
-	
+
 	return render_template('displaytips.html', 
 		homeTeam = homeTeam,
 		awayTeam = awayTeam,
