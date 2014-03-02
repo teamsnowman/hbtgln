@@ -30,9 +30,9 @@ def tips():
 	for play in topPlays:
 		tip = ""
 		if float(play['wpa']) > 0: 
-			tip = random.choice(team_templates).format(pos_team = homeTeam, neg_team = awayTeam, inning = play['inning'])
+			tip = random.choice(team_templates).format(pos_team = homeTeam, neg_team = awayTeam)
 		else:
-			tip = random.choice(team_templates).format(pos_team = homeTeam, neg_team = awayTeam, inning = play['inning'])
+			tip = random.choice(team_templates).format(pos_team = homeTeam, neg_team = awayTeam)
 
 		formattedPlay = play['play'].rstrip(".")
 		
