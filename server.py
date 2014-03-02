@@ -11,6 +11,7 @@ from tip_templates import *
 import re
 
 app = Flask(__name__, static_url_path='/static')
+
 @app.route("/")
 def index():
 	return render_template('index.html')
@@ -30,9 +31,9 @@ def tips():
 	for play in topPlays:
 		tip = ""
 		if float(play['wpa']) > 0: 
-			tip = random.choice(team_templates) % (homeTeam, play['inning'])
+			tip = random.choice(team_templates).format(pos_team = homeTeam, neg_team = awayTeam, inning = play['inning'])
 		else:
-			tip = random.choice(team_templates) % (awayTeam, play['inning'])
+			tip = random.choice(team_templates).format(pos_team = homeTeam, neg_team = awayTeam, inning = play['inning'])
 
 		formattedPlay = play['play'].rstrip(".")
 		
