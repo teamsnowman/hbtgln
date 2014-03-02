@@ -3,3 +3,5 @@
 .env 
 venv
 .sass-cache
+.main.scss.swp
+.index.html.swp
