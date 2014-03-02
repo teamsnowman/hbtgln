@@ -14,15 +14,17 @@ app = Flask(__name__, static_url_path='/static')
 
 @app.route("/")
 def index():
-	return app.send_static_file('templates/index.html')
+	return render_template('index.html')
 
-@app.route("/display-tips")
+@app.route("/display-tips", methods=["POST"])
 def tips():
-	homeTeam, awayTeam, date = getLatestGame("Red Sox")
-
+		
+	homeTeam, awayTeam, date = getLatestGame(request.form['team'])
+	print "GOT IT"
 	f = FanGraphs(os.environ["kimono_api_key"])
 
 	data = f.getData(date.split("T")[0], homeTeam, 2013)
+	print "GOT IT"
 	data = data["results"]["collection1"]
 
 	sortedData = sorted(data, key=lambda k: math.fabs(float(k['wpa'])))

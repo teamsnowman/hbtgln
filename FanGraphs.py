@@ -14,7 +14,6 @@ class FanGraphs:
 			'season': str(season),
 			'dh': '0',
 			})
-
 		results = json.load(urllib.urlopen("%s?%s" % (self.ROOT_URL, encodedData)))
 		return results
 

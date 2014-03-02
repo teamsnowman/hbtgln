@@ -16,4 +16,11 @@ select {
 	text-align:center;
 	font-family:Helvetica;
 }
-
+input{
+	position:absolute;
+	left: calc( 50% + 160px);
+	height:50px;
+	top: calc( 50% - 94px );
+	font-size:36px;
+	width:100pxpx;
+}
