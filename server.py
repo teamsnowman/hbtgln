@@ -18,12 +18,9 @@ def index():
 @app.route("/display-tips", methods=["POST"])
 def tips():
 		
-	homeTeam, awayTeam, date = getLatestGame(request.form['team'])
-	print "GOT IT"
+	homeTeam, awayTeam, date, boxScore = getLatestGame(request.form['team'])
 	f = FanGraphs(os.environ["kimono_api_key"])
-
 	data = f.getData(date.split("T")[0], homeTeam, 2013)
-	print "GOT IT"
 	data = data["results"]["collection1"]
 
 	sortedData = sorted(data, key=lambda k: math.fabs(float(k['wpa'])))

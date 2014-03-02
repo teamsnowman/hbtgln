@@ -12,11 +12,14 @@ def getLatestGame(team):
 	for gameDate in sorted(games.keys(), reverse=True):
 		gameId = games[gameDate]
 		event = s.getEventStats(gameId)
+		boxScore = s.getBoxScore(gameId)
+		scores=[range(int(boxScore["boxscore"]["final"]["@inning"])),range(int(boxScore["boxscore"]["final"]["@inning"]))]
+		boxScore = boxScore["boxscore"]["visitor"]
 		awayTeam = event["statistics"]["visitor"]["@name"]
 		homeTeam = event["statistics"]["home"]["@name"]
 
 		if homeTeam == team or awayTeam == team:
-			return (homeTeam, awayTeam, gameDate)
+			return (homeTeam, awayTeam, gameDate, boxScore)
 
 abbrevDict = {
 		"Red Sox":"bos",
