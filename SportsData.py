@@ -24,3 +24,10 @@ class SportsData:
 
 	def getLeagueSchedule(self, year):
 		return self._request(self.ROOT_URL+"schedule/", str(year))
+
+	def getEventStats(self, eventId):
+		return self._request(self.ROOT_URL+"statistics/", eventId)
+
+	def getPlayerStatistics(self, year):
+		return self._request(self.ROOT_URL+"seasontd/players/", str(year))
+
