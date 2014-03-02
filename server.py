@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import random
 import datetime
 from SportsData import *
@@ -8,14 +8,15 @@ import collections
 import math
 from util import *
 
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__, static_url_path='/static')
 @app.route("/")
 def index():
-	return app.send_static_file('index.html')
+	return app.send_static_file('templates/index.html')
 
 @app.route("/display-tips")
 def tips():
 	homeTeam, awayTeam, date = getLatestGame("Red Sox")
+	print homeTeam
 	f = FanGraphs(os.environ["kimono_api_key"])
 
 	data = f.getData(date.split("T")[0], homeTeam, 2013)
