@@ -28,40 +28,6 @@ def tips():
 
 	topPlays = sortedData[-1:]
 	tips = []
-	for cosa in topPlays:
-		tips.append(cosa['wpa'] + ":" + cosa['play'].rstrip(".") + " in " + cosa['inning'] + "<br>")
-	abbrevDict = {
-		"Red Sox":"bos",
-		"Yankees":"nya",
-		"Rays":"tba",
-		"Orioles":"bal",
-		"Blue Jays":"tor",
-		"Tigers":"det",
-		"Indians":"cle",
-		"Royals":"kca",
-		"Twins":"min",
-		"White Sox":"cha",
-		"Athletics":"oak",
-		"Rangers":"tex",
-		"Angels":"ana",
-		"Mariners":"sea",
-		"Astros":"hou",
-		"Braves":"atl",
-		"Nationals":"was",
-		"Phillies":"phi",
-		"Mets":"nyn",
-		"Marlins":"mia",
-		"Pirates":"pit",
-		"Cardinals":"sln",
-		"Reds":"cin",
-		"Cubs":"chn",
-		"Brewers":"mil",
-		"Dodgers":"lan",
-		"Diamondbacks":"ari",
-		"Rockies":"col",
-		"Giants":"sfn",
-		"Padres":"sdn",
-	}
 	for play in topPlays:
 		tip = ""
 		if float(play['wpa']) > 0: 
@@ -96,7 +62,3 @@ def tips():
 if __name__ == '__main__':
 	app.debug = True
 	app.run(threaded = True)
-
-
-
-
