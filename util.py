@@ -17,8 +17,8 @@ def getLatestGame(team):
 		boxScore = boxScore["boxscore"]["visitor"]
 		awayTeam = event["statistics"]["visitor"]["@name"]
 		homeTeam = event["statistics"]["home"]["@name"]
-
 		if homeTeam == team or awayTeam == team:
+			print "Home Team: ",homeTeam, "Away Team ", awayTeam
 			return (homeTeam, awayTeam, gameDate, boxScore)
 
 abbrevDict = {
